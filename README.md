@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Personal Portfolio Website
 
-## Getting Started
+A modern, responsive, and high-performance personal portfolio built with **Next.js**, **Tailwind CSS**, and modern frontend libraries. This project showcases my skills, projects, experience, and professional journey as a Software Developer.
 
-First, run the development server:
+---
 
+## 🌐 Live Demo
+
+https://nowabshorif.bikelya.com
+
+---
+
+## 📸 Preview
+
+Add screenshot here (optional):
+`/public/preview.png`
+
+---
+
+## ✨ Features
+
+- Fully responsive design (Mobile, Tablet, Desktop)
+- Modern UI with Tailwind CSS
+- Dynamic project showcase system
+- Professional experience timeline
+- Swiper.js interactive sliders
+- Clean About Me + Skills section
+- Contact section with social links
+- Smooth animations and transitions
+- Fast performance with Next.js App Router
+
+---
+
+## 🛠️ Tech Stack
+
+- Next.js 16.2.7
+- React 19.2.4
+- React DOM 19.2.4
+- Tailwind CSS
+- Swiper ^12.2.0
+- Lucide React ^1.17.0
+- React Icons ^5.6.0
+
+---
+
+## 📁 Project Structure
+
+
+
+app/
+components/
+public/
+styles/
+
+
+---
+
+## 🚀 Installation & Setup
+
+### 1. Clone repository
 ```bash
+git clone https://github.com/your-username/portfolio.git
+2. Install dependencies
+npm install
+3. Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+4. Open in browser
+http://localhost:3000
+📦 Build for Production
+npm run build
+npm start
+💼 Projects Included
+ERP Management System (Multi-Tenant)
+E-Commerce Platform
+Inventory Management System
+Brand Identity & UI Design Projects
+Admin Dashboards
+🧠 Skills
+Frontend
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+React.js, Next.js, Tailwind CSS
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Backend
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Laravel, PHP, Node.js
 
-## Learn More
+Database
 
-To learn more about Next.js, take a look at the following resources:
+MySQL, Oracle
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Tools
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Git, REST APIs, Swiper.js
 
-## Deploy on Vercel
+📞 Contact
+Email: nsanoman@gmail.com
+GitHub: https://github.com/ns-noman/portfolio-web-app.git
+LinkedIn: https://www.linkedin.com/in/nowab-shorif/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🎯 Purpose
+
+This portfolio is built to:
+
+Showcase real-world development experience
+Demonstrate full-stack engineering skills
+Present ERP and enterprise-level systems
+Attract recruiters and admission committees
+👨‍💻 Author
+
+Nowab Shorif Noman
+Web Application Developer
+Laravel | React | Next.js | ERP Systems
