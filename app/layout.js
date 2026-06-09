@@ -1,3 +1,4 @@
+import { SiteInfoProvider } from "@/context/SiteInfoContext";
 import "./globals.css";
 import { Raleway } from "next/font/google";
 import Header from "@/components/Header";
@@ -20,9 +21,11 @@ export default function RootLayout({ children }) {
       className={`${raleway.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header/>
-        {children}
-        <Footer/>
+        <SiteInfoProvider>
+          <Header/>
+          {children}
+          <Footer/>
+        </SiteInfoProvider>
       </body>
     </html>
   );

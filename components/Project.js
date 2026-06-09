@@ -348,7 +348,7 @@ function Modal({ isOpen, onClose, item }) {
 }
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 
-export default function GallerySection() {
+export default function Project() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [animKey,      setAnimKey]      = useState(0);
   const [modalOpen,    setModalOpen]    = useState(false);

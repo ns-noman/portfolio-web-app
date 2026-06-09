@@ -1,0 +1,39 @@
+{
+  "first_name": "Nowab",
+  "last_name": "Shorif",
+  "title_1": "Full Stack",
+  "title_2": "Developer",
+  "email": "nsanoman@gmail.com",
+  "phone": "+880 1839317038",
+  "links": {
+    "github": "https://github.com/ns-noman",
+    "linkedin": "https://www.linkedin.com/in/nowab-shorif",
+    "facebook": "https://www.facebook.com/nowab.shorif",
+    "website": "https://nowabshorif.bikelya.com"
+  },
+  "about": "I am a passionate full stack developer with expertise in both frontend and backend technologies. I enjoy creating dynamic and responsive web applications that provide seamless user experiences. With a strong foundation in programming languages and frameworks, I am dedicated to delivering high-quality code and innovative solutions.",
+
+    "skills": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "HTML",
+        "CSS",
+        "Tailwind CSS"
+    ],
+    "experience":
+    [
+        {
+            "company": "Tech Solutions Inc.",
+            "position": "Full Stack Developer",
+            "duration": "Jan 2020 - Present",
+            "responsibilities": [
+                "Developed and maintained web applications using React, Node.js, and MongoDB.",
+                "Collaborated with cross-functional teams to design and implement new features.",
+                "Optimized application performance and ensured scalability."
+            ]
+        }
+    ]
+}   
