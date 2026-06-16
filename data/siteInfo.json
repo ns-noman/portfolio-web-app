@@ -1,14 +1,15 @@
 {
   "first_name": "Nowab",
   "last_name": "Shorif",
-  "title_1": "Full Stack",
+  "title_1": "Full Stack Software",
   "title_2": "Developer",
   "email": "nsanoman@gmail.com",
   "phone": "+880 1839317038",
+  "profilePic": "/img/logo.png",
   "links": {
     "github": "https://github.com/ns-noman",
     "linkedin": "https://www.linkedin.com/in/nowab-shorif",
-    "facebook": "https://www.facebook.com/nowab.shorif",
+    "youtube": "https://www.youtube.com/@nsanoman",
     "website": "https://nowabshorif.bikelya.com"
   },
   "about": "I am a passionate full stack developer with expertise in both frontend and backend technologies. I enjoy creating dynamic and responsive web applications that provide seamless user experiences. With a strong foundation in programming languages and frameworks, I am dedicated to delivering high-quality code and innovative solutions.",

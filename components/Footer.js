@@ -1,12 +1,20 @@
 import Link from "next/link";
 import {
-  FiGithub,
-  FiLinkedin,
-  FiGlobe,
-  FiMail,
-} from "react-icons/fi";
+  FaGithub,
+  FaLinkedin,
+  FaYoutube,
+  FaGlobe,
+  FaChevronDown,
+} from "react-icons/fa";
 
-export default function Footer() {
+const socialIcons = {
+  github: FaGithub,
+  linkedin: FaLinkedin,
+  youtube: FaYoutube,
+  website: FaGlobe,
+};
+
+export default function Footer({ siteInfo }) {
   return (
     <footer className="bg-black text-white py-10 border-t border-gray-800">
       <div className="container mx-auto px-4">
@@ -23,8 +31,30 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* Social Links */}
+            <div className="flex items-center gap-4 text-white">
+              {Object.entries(siteInfo.links).map(([key, url]) => {
+                const Icon = socialIcons[key];
+                if (!Icon) return null;
+
+                return (
+                  <Link
+                    key={key}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={key}
+                    className="w-9 h-9 flex items-center justify-center border border-gray-300 text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 
+                              hover:shadow-lg hover:scale-110"
+                  >
+                    <Icon size={16} />
+                  </Link>
+                );
+              })}
+            </div>
+
           {/* Middle Links */}
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
 
             <a
               href="https://github.com"
@@ -60,7 +90,7 @@ export default function Footer() {
               <FiGlobe />
             </a>
 
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom */}

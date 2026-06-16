@@ -3,9 +3,22 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaFacebook, FaGlobe, FaChevronDown } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaYoutube,
+  FaGlobe,
+  FaChevronDown,
+} from "react-icons/fa";
 
-export default function Header() {
+const socialIcons = {
+  github: FaGithub,
+  linkedin: FaLinkedin,
+  youtube: FaYoutube,
+  website: FaGlobe,
+};
+
+export default function Header({siteInfo}) {
   const [open, setOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
@@ -58,21 +71,19 @@ export default function Header() {
 
           {/* Logo / Brand */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="logo--img">
-              <Image
-                src="/img/logo.png"
-                alt="Logo"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
-              />
-            </div>
+            <Image
+              src={siteInfo.profilePic}
+              alt="Logo"
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-full object-cover"
+            />
             <div className="logo--content leading-tight">
               <h1 className="text-lg font-medium">
-                Nowab <strong className="font-bold">Shorif</strong>
+                {siteInfo.first_name} <strong className="font-bold">{siteInfo.last_name}</strong>
               </h1>
               <p className="text-sm">
-                <strong>Full Stack Software</strong> Developer
+                <strong>{siteInfo.title_1}</strong> {siteInfo.title_2}
               </p>
             </div>
           </Link>
@@ -132,44 +143,27 @@ export default function Header() {
             </ul>
 
             {/* Social Links */}
-            <div className="hidden lg:flex ml-4 items-center gap-2">
-              <Link
-                href="https://github.com/your-username"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="w-9 h-9 flex items-center justify-center border border-gray-300 text-black hover:bg-black hover:text-white hover:border-black transition-all duration-300 hover:shadow-lg hover:scale-110"
-              >
-                <FaGithub size={16} />
-              </Link>
-              <Link
-                href="https://linkedin.com/in/your-username"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="w-9 h-9 flex items-center justify-center border border-gray-300 text-black hover:bg-black hover:text-white hover:border-black transition-all duration-300 hover:shadow-lg hover:scale-110"
-              >
-                <FaLinkedin size={16} />
-              </Link>
-              <Link
-                href="https://facebook.com/your-profile"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="w-9 h-9 flex items-center justify-center border border-gray-300 text-black hover:bg-black hover:text-white hover:border-black transition-all duration-300 hover:shadow-lg hover:scale-110"
-              >
-                <FaFacebook size={16} />
-              </Link>
-              <Link
-                href="https://your-website.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Website"
-                className="w-9 h-9 flex items-center justify-center border border-gray-300 text-black hover:bg-black hover:text-white hover:border-black transition-all duration-300 hover:shadow-lg hover:scale-110"
-              >
-                <FaGlobe size={16} />
-              </Link>
-            </div>
+              <div className="hidden lg:flex ml-4 items-center gap-2">
+                {Object.entries(siteInfo.links).map(([key, url]) => {
+                  const Icon = socialIcons[key];
+                  if (!Icon) return null;
+
+                  return (
+                    <Link
+                      key={key}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={key}
+                      className="w-9 h-9 flex items-center justify-center border border-gray-300 text-black 
+                                hover:bg-black hover:text-white hover:border-black transition-all duration-300 
+                                hover:shadow-lg hover:scale-110"
+                    >
+                      <Icon size={16} />
+                    </Link>
+                  );
+                })}
+              </div>
           </div>
         </div>
       </nav>

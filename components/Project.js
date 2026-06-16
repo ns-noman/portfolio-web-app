@@ -1,116 +1,160 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
-
-const FILTER_TABS = [
-  { label: "ALL PROJECTS",  value: "all"               },
-  { label: "WEBSITE",       value: "website-item"      },
-  { label: "LOGO",          value: "logo-item"         },
-  { label: "APPLICATION",   value: "application-item"  },
-  { label: "ILLUSTRATION",  value: "illustation-item"  },
-  { label: "PRINT DESIGN",  value: "print-design-item" },
-];
 
 const projects = [
   {
     id: 1,
-    title: "Multi Tenant Bike Dealership ERP With E-Commerce",
-    image: "/img/projects-img/bike-dealership-erp/thumbnail.png",
-    desc: "A full-featured ERP system for bike dealerships with multi-tenant architecture and integrated e-commerce platform.",
+    title: "Multi Tenant Bike Dealership ERP with E-commerce",
+    subtitle: "Sales, Service, Inventory & Loan Management",
+    image: "/img/projects-img/bike-dealership-erp/img.png",
+    desc: "A comprehensive Enterprise Resource Planning (ERP) solution for motorbike dealerships integrating sales, purchases, inventory management, customer accounting, service management, loan tracking, and investor profit-sharing into a centralized platform.",
+    fullDesc: `
+      <h3 style="margin-bottom:15px;color:#222;font-size:18px;font-weight:600;">
+        Bike Dealership ERP – Sales, Service, Inventory & Loan Management System
+      </h3>
+
+      <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+        A comprehensive Enterprise Resource Planning (ERP) solution developed for motorbike dealerships and service centers to streamline daily business operations. The system integrates sales, purchases, inventory management, customer and supplier accounting, service management, loan tracking, and investor profit-sharing into a centralized platform.
+      </p>
+
+      <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+        The application automates bike sales and purchase workflows with real-time inventory updates, profit calculations, and financial tracking. It includes a dedicated service management module for handling repairs, maintenance records, service categories, and service profitability analysis.
+      </p>
+
+      <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+        Advanced inventory controls provide complete visibility of motorcycles, spare parts, and accessories, while integrated customer, supplier, and party ledgers help manage payments, dues, and account balances. The system also features loan management with repayment tracking and investor management with profit-sharing calculations.
+      </p>
+    `,
     
-    tech: ["Laravel", "React", "MySQL", "Tailwind", "REST API"],
+    tech: ["Laravel", "Next.js", "MySQL", "Tailwind", "REST API"],
 
     highlights: [
-      "Multi-tenant architecture",
-      "Inventory & sales management",
-      "E-commerce integration",
-      "Role-based authentication",
-      "Admin dashboard with analytics"
+      "Multi-tenant architecture with role-based access",
+      "Real-time inventory & sales management",
+      "Automated profit calculations",
+      "Service center operations tracking",
+      "Customer & supplier ledger management",
+      "Interactive Ajax-based UI"
     ],
-
-    cats: ["erp", "ecommerce", "web-app"],
-
-    live: "https://your-live-link.com",
-    github: "https://github.com/your-repo",
-    caseStudy: false,
+      cats: ["erp", "web-app", "enterprise"],
+      liveFrontend: "https://bikelya.com/",
+      liveBackend: "https://demo.bikelya.com/",
+      githubFrontend: "https://github.com/ns-noman/multi-tenant-bike-dealership-erp.git",
+      githubBackend: "https://github.com/ns-noman/bike-dealership-ecommerce.git",
+      caseStudy: null,
   },
 
   {
     id: 2,
-    title: "Brand Identity Kit",
-    image: "/img/gallery-img/gallery-photo-2.png",
-    desc: "Complete brand identity system including logo design, typography, and brand guidelines for a tech startup.",
+    title: "Enterprise Logistics ERP System",
+    subtitle: "Multi-Branch & Air Freight Management",
+    image: "/img/projects-img/logistics-ms/img.png",
+    desc: "Comprehensive logistics management system with multi-branch coordination, air freight tracking, shipment management, and financial reporting.",
+    fullDesc: `
+      <h3 style="margin-bottom:15px;color:#222;font-size:18px;font-weight:600;">
+        Enterprise Logistics ERP – Multi-Branch & Air Freight Management
+      </h3>
 
-    tech: ["Adobe Illustrator", "Photoshop"],
+      <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+        Advanced logistics platform designed for multi-branch operations with specialized air freight management capabilities. Handles complex shipment workflows, real-time tracking, and integrated financial reporting across multiple locations.
+      </p>
+    `,
+
+    tech: ["Laravel", "Next.js", "MySQL", "Tailwind", "REST API"],
 
     highlights: [
-      "Logo system design",
-      "Color palette creation",
-      "Typography system",
-      "Brand guideline documentation"
+      "Multi-branch fleet management",
+      "Air freight & cargo tracking",
+      "Real-time shipment status updates",
+      "Advanced routing optimization",
+      "Integration with shipping providers"
     ],
 
-    cats: ["branding", "logo", "design"],
-
-    live: "",
-    github: "",
-    caseStudy: true,
+    cats: ["erp", "logistics", "enterprise"],
+      liveFrontend: "https://airship.com.bd/",
+      liveBackend: "https://airshipdemo.bikelya.com/",
+      githubFrontend: "https://github.com/ns-noman/airship.com.bd.git",
+      githubBackend: "https://github.com/ns-noman/airship.com.bd.git",
+      caseStudy: "",
   },
 
   {
     id: 3,
-    title: "Minimal Logo Redesign",
-    image: "/img/gallery-img/gallery-photo-3.png",
-    desc: "A modern minimalist logo redesign for a consulting firm focusing on clean identity and strong typography.",
+    title: "Restaurant Management ERP System",
+    subtitle: "POS, Kitchen Management & Delivery Integration",
+    image: "/img/projects-img/rms/img.png",
+    desc: "Complete restaurant operations platform integrating POS, kitchen management, inventory control, HRM, payroll, procurement, delivery management, and financial reporting.",
+    fullDesc: `
+      <h3 style="margin-bottom:15px;color:#222;font-size:18px;font-weight:600;">
+        Restaurant Management ERP – Integrated Operations
+      </h3>
+      <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+        Unified restaurant management system combining point-of-sale, kitchen operations, inventory management, human resources, payroll processing, supplier management, and delivery coordination. Streamlines daily operations while providing real-time insights into sales and costs.
+      </p>
+    `,
 
-    tech: ["Illustrator", "Figma"],
+    tech: ["Laravel", "JavaScript","jQuery","Bootstrap", "MySQL"],
 
     highlights: [
-      "Minimalist design approach",
-      "Typography refinement",
-      "Brand modernization"
+      "Integrated POS system with multiple terminals",
+      "Kitchen display system (KDS)",
+      "Real-time inventory tracking",
+      "Staff management & payroll",
+      "Delivery fleet management",
+      "Financial reporting & analytics"
     ],
 
-    cats: ["logo", "branding"],
+    cats: ["erp", "pos", "enterprise"],
 
-    live: "",
-    github: "",
-    caseStudy: false,
+    liveFrontend: "",
+    liveBackend: "https://rmsdemo.bikelya.com/",
+    githubFrontend: "",
+    githubBackend: "https://github.com/ns-noman/airship.com.bd.git",
+    caseStudy: "",
   },
-
   {
     id: 4,
-    title: "Inventory Management System",
-    image: "/img/gallery-img/gallery-photo-4.png",
-    desc: "ERP-based inventory system with real-time stock tracking, reporting, and admin control panel.",
+    title: "Digital Newspaper Management System",
+    subtitle: "Content Management & Distribution Platform",
+    image: "/img/projects-img/news/img.png",
+    desc: "Comprehensive digital newspaper platform with content management, subscription handling, ad management, and multi-channel distribution.",
+    fullDesc: `
+      <h3 style="margin-bottom:15px;color:#222;font-size:18px;font-weight:600;">
+        Digital Newspaper Management – Content & Distribution
+      </h3>
 
-    tech: ["Laravel", "MySQL", "JavaScript", "Bootstrap"],
+      <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+        Modern newspaper management system providing content management, subscription processing, advertisement management, and multi-channel distribution. Supports web, mobile, and print workflows with comprehensive analytics.
+      </p>
+    `,
+
+    tech: ["Laravel", "bootstrap", "MySQL"],
 
     highlights: [
-      "Real-time inventory tracking",
-      "Stock alerts system",
-      "Sales & purchase modules",
-      "Advanced reporting dashboard"
+      "Content management & editorial workflow",
+      "Subscription & payment processing",
+      "Advertisement management system",
+      "Multi-channel publishing (web, mobile, print)",
+      "Real-time analytics & reporting",
+      "User role & permission management"
     ],
 
-    cats: ["erp", "application", "admin-panel"],
+    cats: ["cms", "web-app", "publishing"],
 
-    live: "https://your-live-link.com",
-    github: "https://github.com/your-repo",
-    caseStudy: false,
+    liveFrontend: "https://bangladesherkhabor.net/",
+    liveBackend: "https://bangladesherkhabor-demo.bikelya.com/",
+    githubFrontend: "https://github.com/ns-noman/digital-newspaper-management-system.git",
+    githubBackend: "https://github.com/ns-noman/digital-newspaper-management-system.git",
+    caseStudy: null,
   },
 ];
 
-const MODAL_DETAILS = {
-  tags: ["UX Design", "UI Design", "Prototype", "Design", "Identity"],
-  image: "img/gallery-img/project-01.jpg",
-  desc: [
-    "I created a full e-commerce web template for a client planning their launch. The design followed the latest UX principles — structured hierarchy, clear conversion paths, and accessible components throughout.",
-    "Following that, I built a companion admin dashboard optimised for the administrator's workflow. The project wrapped with a full handoff including design tokens and a component library.",
-  ],
-};
+// Get all unique categories
+const ALL_CATEGORIES = ["all", ...new Set(projects.flatMap((p) => p.cats))];
 
 // ─── HOOK ────────────────────────────────────────────────────────────────────
 
@@ -121,7 +165,12 @@ function useInView(threshold = 0.1) {
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setInView(true); obs.disconnect(); } },
+      ([e]) => {
+        if (e.isIntersecting) {
+          setInView(true);
+          obs.disconnect();
+        }
+      },
       { threshold }
     );
     obs.observe(el);
@@ -138,62 +187,98 @@ function GalleryCard({ item, index, onOpen }) {
   return (
     <div
       ref={ref}
-      data-cat={item.cats.join(" ")}
-      className={`thumbnail gallery-item w-full transition-all duration-700 ease-out ${
+      className={`group transition-all duration-700 ease-out ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
-      style={{ transitionDelay: `${(index % 4) * 90}ms` }}
+      style={{ transitionDelay: `${(index % 4) * 80}ms` }}
     >
-      {/* ── Image Area ── */}
-      <div className="relative overflow-hidden group cursor-pointer bg-gray-100 aspect-[4/3]"
-           onClick={() => onOpen(item)}>
+      {/* ── Card Container ── */}
+      <div
+        onClick={() => onOpen(item)}
+        className="h-full flex flex-col bg-white border border-slate-200 rounded-xl overflow-hidden 
+                   hover:border-blue-400 hover:shadow-lg transition-all duration-300 cursor-pointer"
+      >
+        {/* ── Image Container ── */}
+        <div className="relative overflow-hidden bg-slate-100 aspect-video">
+          <div className="relative w-full overflow-hidden">
+            <Image
+              src={item.image}
+              alt={item.title}
+              width={1000}
+              height={1000}
+              className="w-full h-auto object-contain"
+            />
+          </div>
 
-        <img
-          src={item.image}
-          alt={item.title}
-          className="img-fluid w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-        />
-
-        {/* Case study badge */}
-        {item.caseStudy && (
-          <span className="gallery--case-study absolute top-0 left-0 z-10 bg-blue-600 text-white text-[9px] font-bold tracking-[0.18em] px-2.5 py-1 uppercase">
-            Case Study
-          </span>
-        )}
-
-        {/* Hover overlay */}
-        <div className="gallery-overlay absolute inset-0 bg-gray-900/80 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-          {/* Corner brackets */}
-          <span className="absolute top-3 left-3  w-4 h-4 border-t-2 border-l-2 border-white/70 group-hover:w-7 group-hover:h-7 transition-all duration-300" />
-          <span className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-white/70 group-hover:w-7 group-hover:h-7 transition-all duration-300" />
-          <span className="absolute bottom-3 left-3  w-4 h-4 border-b-2 border-l-2 border-white/70 group-hover:w-7 group-hover:h-7 transition-all duration-300" />
-          <span className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-white/70 group-hover:w-7 group-hover:h-7 transition-all duration-300" />
-
-          <div className="translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400 text-center px-4">
-            {item.caseStudy && (
-              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-white/50 text-white mb-3 icon-link">
-                <i className="icon fa fa-file-text-o text-xs" />
+          {/* ── Case Study Badge ── */}
+          {item.caseStudy && (
+            <div className="absolute top-3 right-3 z-10">
+              <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-blue-600 to-blue-700 
+                             text-white text-[11px] font-semibold tracking-wide px-2.5 py-1.5 rounded-full
+                             shadow-md">
+                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                  <path d="M4 5a2 2 0 012-2 1 1 0 000 2H6a1 1 0 000-2H5a1 1 0 000 2H4z" />
+                  <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 000 2h16a1 1 0 000-2H3z" clipRule="evenodd" />
+                </svg>
+                Case Study
               </span>
-            )}
-            <button className="btn gallery--window block mx-auto text-[10px] font-bold tracking-[0.16em] uppercase px-5 py-2 border border-white text-white hover:bg-white hover:text-gray-900 transition-colors duration-200">
-              View Project
+            </div>
+          )}
+
+          {/* ── Overlay ── */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent 
+                          opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                          flex items-end justify-center pb-4">
+            <button className="px-4 py-2 bg-white text-gray-900 text-sm font-semibold 
+                             rounded-lg hover:bg-gray-100 transition-all transform scale-95 
+                             group-hover:scale-100">
+              View Details
             </button>
           </div>
         </div>
-      </div>
 
-      {/* ── Text Below Image ── */}
-      <div className="pt-3 pb-1 px-0.5">
-        <div className="flex items-start justify-between gap-2 mb-1">
-          <h3 className="text-sm font-bold tracking-wide text-gray-900 uppercase leading-snug">
+        {/* ── Content ── */}
+        <div className="flex-1 p-4 flex flex-col">
+          
+          {/* ── Category Badge ── */}
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-[10px] font-bold tracking-wider uppercase text-blue-600 
+                           bg-blue-50 px-2 py-0.5 rounded">
+              {item.cats[0] || "Project"}
+            </span>
+          </div>
+
+          {/* ── Title & Subtitle ── */}
+          <h3 className="text-sm font-bold text-gray-900 mb-1 leading-snug line-clamp-2">
             {item.title}
           </h3>
-          {/* Category pill — first cat */}
-          <span className="shrink-0 text-[9px] font-semibold tracking-wider text-blue-600 bg-blue-50 border border-blue-100 px-2 py-0.5 uppercase mt-0.5">
-            {item.cats[0].replace("-item", "")}
-          </span>
+          <p className="text-xs text-gray-500 mb-3 line-clamp-2">
+            {item.subtitle}
+          </p>
+
+          {/* ── Description ── */}
+          <p className="text-xs text-gray-600 line-clamp-2 flex-1 mb-3">
+            {item.desc}
+          </p>
+
+          {/* ── Tech Stack ── */}
+          <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100">
+            {item.tech.slice(0, 2).map((t, i) => (
+              <span
+                key={i}
+                className="text-[10px] font-medium text-slate-600 bg-slate-50 px-1.5 py-0.5 rounded"
+              >
+                {t}
+              </span>
+            ))}
+            {item.tech.length > 2 && (
+              <span className="text-[10px] font-medium text-slate-500 px-1.5 py-0.5">
+                +{item.tech.length - 2}
+              </span>
+            )}
+          </div>
         </div>
-        <p className="text-xs text-gray-500 leading-5 line-clamp-2">{item.desc}</p>
       </div>
     </div>
   );
@@ -202,11 +287,27 @@ function GalleryCard({ item, index, onOpen }) {
 // ─── MODAL ───────────────────────────────────────────────────────────────────
 
 function Modal({ isOpen, onClose, item }) {
+  const scrollYRef = useRef(0);
+
   useEffect(() => {
     if (!isOpen) return;
-    const fn = (e) => { if (e.key === "Escape") onClose(); };
-    document.addEventListener("keydown", fn);
-    return () => document.removeEventListener("keydown", fn);
+
+    // Lock scroll
+    scrollYRef.current = window.scrollY;
+    document.body.style.overflow = "hidden";
+    document.body.style.marginRight = "8px"; // Prevent layout shift
+
+    const handleEscape = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "";
+      document.body.style.marginRight = "";
+      window.scrollTo(0, scrollYRef.current);
+    };
   }, [isOpen, onClose]);
 
   if (!isOpen || !item) return null;
@@ -215,125 +316,211 @@ function Modal({ isOpen, onClose, item }) {
     <>
       <style>{`
         @keyframes modalIn {
-          from { opacity: 0; transform: translateY(20px) scale(0.98); }
-          to   { opacity: 1; transform: translateY(0) scale(1); }
+          from {
+            opacity: 0;
+            transform: translateY(30px) scale(0.96);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
         }
         .modal-animate {
-          animation: modalIn 0.3s ease-out both;
+          animation: modalIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .modal-content::-webkit-scrollbar {
+          width: 6px;
+        }
+        .modal-content::-webkit-scrollbar-track {
+          background: #f1f5f9;
+        }
+        .modal-content::-webkit-scrollbar-thumb {
+          background: #cbd5e1;
+          border-radius: 3px;
+        }
+        .modal-content::-webkit-scrollbar-thumb:hover {
+          background: #94a3b8;
         }
       `}</style>
 
+      {/* ── Backdrop ── */}
+      <div
+        className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
+        onClick={onClose}
+        style={{ animation: "fadeIn 0.3s ease-out" }}
+      />
+
+      {/* ── Modal ── */}
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        
-        {/* Overlay */}
         <div
-          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-          onClick={onClose}
-        />
+          className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-2xl shadow-2xl 
+                     overflow-hidden flex flex-col modal-animate"
+        >
+          {/* ── STICKY HEADER ── */}
+          <div
+            className="sticky top-0 z-20 bg-white border-b border-slate-200 px-6 py-4
+                       shadow-sm backdrop-blur-sm bg-white/95"
+          >
+            {/* ── Top Row: Title & Close Button ── */}
+            <div className="flex items-start justify-between gap-4 mb-4">
+              <div className="flex-1 min-w-0">
+                <h2 className="text-xl font-bold text-gray-900 mb-1">
+                  {item.title}
+                </h2>
+                <p className="text-sm text-gray-600">
+                  {item.subtitle}
+                </p>
+              </div>
 
-        {/* Modal */}
-        <div className="relative z-10 w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden modal-animate flex flex-col max-h-[90vh]">
+              {/* ── Close Button ── */}
+              <button
+                onClick={onClose}
+                className="flex-shrink-0 w-10 h-10 rounded-full border border-slate-300 
+                         flex items-center justify-center text-gray-600 hover:bg-slate-100 
+                         hover:border-slate-400 transition-all duration-200 active:scale-95"
+                aria-label="Close"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
 
-          {/* HEADER */}
-          <div className="flex items-start justify-between px-6 py-5 border-b">
-
-            <div>
-              <h2 className="text-xl font-bold text-gray-900">
-                {item.title}
-              </h2>
-
-              {/* Tech Stack */}
-              <div className="flex flex-wrap gap-2 mt-2">
-                {(item.tech || ["Laravel", "React", "MySQL"]).map((t, i) => (
+            {/* ── Second Row: Tech Stack & Action Buttons ── */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              
+              {/* ── Tech Stack Pills ── */}
+              <div className="flex flex-wrap gap-2">
+                {(item.tech || []).map((t, i) => (
                   <span
                     key={i}
-                    className="text-[11px] px-2 py-1 bg-blue-50 text-blue-600 rounded-full font-medium"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-blue-700 
+                             bg-blue-50 border border-blue-200 px-2.5 py-1 rounded-full"
                   >
                     {t}
                   </span>
                 ))}
               </div>
-            </div>
 
-            <button
-              onClick={onClose}
-              className="w-8 h-8 flex items-center justify-center rounded-full border hover:bg-gray-100 text-gray-500 text-xl"
-            >
-              ×
-            </button>
-          </div>
+              {/* ── Action Buttons ── */}
+              <div className="flex flex-wrap gap-2 sm:gap-2.5">
 
-          {/* BODY */}
-          <div className="overflow-y-auto">
-
-            {/* Image */}
-            <div className="relative w-full h-[260px] md:h-[350px]">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/30" />
-            </div>
-
-            {/* Content */}
-            <div className="px-6 py-5 space-y-5">
-
-              {/* Description */}
-              <p className="text-gray-600 leading-7 text-sm">
-                {item.description}
-              </p>
-
-              {/* Highlights */}
-              <div>
-                <h4 className="font-semibold mb-2 text-gray-900">
-                  Key Highlights
-                </h4>
-
-                <ul className="space-y-2 text-sm text-gray-600 list-disc pl-5">
-                  {(item.highlights || [
-                    "Clean architecture",
-                    "Responsive UI",
-                    "REST API integration",
-                  ]).map((h, i) => (
-                    <li key={i}>{h}</li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Buttons */}
-              <div className="flex flex-wrap gap-3 pt-2">
-
-                {/* Live Preview */}
-                {item.live && (
+                {/* ── Live Frontend ── */}
+                {item.liveFrontend && (
                   <a
-                    href={item.live}
+                    href={item.liveFrontend}
                     target="_blank"
-                    className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-600 text-white 
+                            text-xs sm:text-sm font-semibold rounded-lg hover:bg-green-700 transition-all
+                            duration-200 active:scale-95 shadow-sm hover:shadow-md whitespace-nowrap"
+                    title="Open Live Frontend"
                   >
-                    🔗 Live Preview
+                    <span className="hidden sm:inline">Live Frontend</span>
                   </a>
                 )}
 
-                {/* GitHub */}
-                {item.github && (
+                {/* ── Live Backend ── */}
+                {item.liveBackend && (
                   <a
-                    href={item.github}
+                    href={item.liveBackend}
                     target="_blank"
-                    className="px-4 py-2 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-black transition"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-500 text-white 
+                            text-xs sm:text-sm font-semibold rounded-lg hover:bg-green-600 transition-all
+                            duration-200 active:scale-95 shadow-sm hover:shadow-md whitespace-nowrap"
+                    title="Open Live Backend"
                   >
-                    💻 GitHub
+                    <span className="hidden sm:inline">Live Backend</span>
                   </a>
                 )}
 
-                {/* Case Study */}
+                {/* ── GitHub Frontend ── */}
+                {item.githubFrontend && (
+                  <a
+                    href={item.githubFrontend}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 px-1 py-1 bg-gray-900 text-white 
+                            text-[11px] sm:text-xs font-medium rounded-md hover:bg-black transition-all
+                            duration-200 active:scale-95 shadow-sm hover:shadow-md whitespace-nowrap"
+                    title="View Frontend Code"
+                  >
+                    <svg
+                      className="w-3 h-3"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.49.5.092.682-.217.682-.482
+                        0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.343-3.369-1.343-.454-1.156-1.11-1.463-1.11-1.463
+                        -.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.544 2.914 1.19
+                        .092-.927.35-1.555.636-1.911-2.22-.253-4.555-1.113-4.555-4.943
+                        0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647
+                        0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.836
+                        c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025
+                        .546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683
+                        0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852
+                        0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48
+                        C17.137 18.19 20 14.436 20 10.017 20 4.484 15.522 0 10 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+
+                    <span className="hidden sm:inline">FE</span>
+                  </a>
+                )}
+
+                {/* ── GitHub Backend ── */}
+                {item.githubBackend && (
+                  <a
+                    href={item.githubBackend}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 px-2 py-1 bg-gray-800 text-white 
+                            text-[11px] sm:text-xs font-medium rounded-md hover:bg-black transition-all
+                            duration-200 active:scale-95 shadow-sm hover:shadow-md whitespace-nowrap"
+                    title="View Backend Code"
+                  >
+                    <svg
+                      className="w-3 h-3"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.49.5.092.682-.217.682-.482
+                        0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.343-3.369-1.343-.454-1.156-1.11-1.463-1.11-1.463
+                        -.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.544 2.914 1.19
+                        .092-.927.35-1.555.636-1.911-2.22-.253-4.555-1.113-4.555-4.943
+                        0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647
+                        0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.836
+                        c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025
+                        .546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683
+                        0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852
+                        0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48
+                        C17.137 18.19 20 14.436 20 10.017 20 4.484 15.522 0 10 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+
+                    <span className="hidden sm:inline">BE</span>
+                  </a>
+                )}
+
+                {/* ── Case Study (unchanged) ── */}
                 {item.caseStudy && (
                   <a
                     href={item.caseStudy}
                     target="_blank"
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 text-white 
+                            text-xs sm:text-sm font-semibold rounded-lg hover:bg-blue-700 transition-all
+                            duration-200 active:scale-95 shadow-sm hover:shadow-md whitespace-nowrap"
+                    title="Read case study"
                   >
-                    📘 Case Study
+                    <span className="hidden sm:inline">Study</span>
                   </a>
                 )}
 
@@ -341,26 +528,88 @@ function Modal({ isOpen, onClose, item }) {
             </div>
           </div>
 
+          {/* ── SCROLLABLE CONTENT ── */}
+          <div className="modal-content overflow-y-auto flex-1">
+            
+            {/* ── Image ── */}
+            <div className="w-full">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={1400}
+                height={5000}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+
+            {/* ── Main Content ── */}
+            <div className="px-6 py-8 space-y-8">
+              
+              {/* ── Description ── */}
+              <div className="prose prose-sm max-w-none">
+                <div
+                  className="text-gray-700 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: item.fullDesc || item.desc }}
+                />
+              </div>
+
+              {/* ── Highlights Section ── */}
+              {item.highlights && item.highlights.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <span className="w-1 h-6 bg-blue-600 rounded-full" />
+                    Key Highlights
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {item.highlights.map((h, i) => (
+                      <div
+                        key={i}
+                        className="flex gap-3 p-3 bg-slate-50 rounded-lg border border-slate-200"
+                      >
+                        <svg
+                          className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <span className="text-sm text-gray-700">{h}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Spacer for comfortable scrolling */}
+              <div className="h-4" />
+            </div>
+          </div>
         </div>
       </div>
     </>
   );
 }
+
+
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 
-export default function Project() {
+export default function ProjectGallery() {
   const [activeFilter, setActiveFilter] = useState("all");
-  const [animKey,      setAnimKey]      = useState(0);
-  const [modalOpen,    setModalOpen]    = useState(false);
-  const [activeItem,   setActiveItem]   = useState(null);
+  const [animKey, setAnimKey] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState(null);
 
-  const [titleRef,  titleInView]  = useInView(0.1);
+  const [titleRef, titleInView] = useInView(0.1);
   const [filterRef, filterInView] = useInView(0.1);
 
   const filtered =
     activeFilter === "all"
       ? projects
-      : projects.filter((it) => it.cats.includes(activeFilter));
+      : projects.filter((item) => item.cats.includes(activeFilter));
 
   const handleFilter = (value) => {
     if (value === activeFilter) return;
@@ -368,26 +617,36 @@ export default function Project() {
     setAnimKey((k) => k + 1);
   };
 
-  const openModal  = (item) => { setActiveItem(item); setModalOpen(true); };
-  const closeModal = ()     => setModalOpen(false);
+  const openModal = (item) => {
+    setActiveItem(item);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => setModalOpen(false);
 
   return (
-    <section id="gallery" className="py-4">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-16 bg-gradient-to-b from-white to-slate-50">
+      <div className="container mx-auto px-4 max-w-7xl">
 
-        {/* ── Title ── */}
+        {/* ── Section Title ── */}
         <div
           ref={titleRef}
-          className={`section--title mb-10 transition-all duration-700 ${
+          className={`mb-12 transition-all duration-700 ${
             titleInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <h2 className="text-4xl font-bold tracking-tight">
-            <strong>My Projects</strong>
-          </h2>
+          <div className="space-y-3">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+              Featured Projects
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl">
+              A selection of enterprise solutions and digital platforms I've built to streamline business operations
+            </p>
+          </div>
           <div
-            className={`mt-3 h-[3px] bg-blue-600 rounded-full transition-all duration-700 delay-300 ${
-              titleInView ? "w-14 opacity-100" : "w-0 opacity-0"
+            className={`mt-4 h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full transition-all 
+                       duration-700 delay-300 ${
+              titleInView ? "w-20 opacity-100" : "w-0 opacity-0"
             }`}
           />
         </div>
@@ -395,31 +654,48 @@ export default function Project() {
         {/* ── Filter Tabs ── */}
         <div
           ref={filterRef}
-          className={`gallery-filter-menu mb-10 transition-all duration-700 delay-100 ${
+          className={`mb-10 transition-all duration-700 delay-100 ${
             filterInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <div className="flex flex-wrap gap-2 list-none p-0 m-0">
+          <div className="flex flex-wrap gap-2.5">
+            {ALL_CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => handleFilter(cat)}
+                className={`px-4 py-2 rounded-full text-sm font-semibold tracking-wide transition-all 
+                           duration-300 border capitalize
+                           ${
+                             activeFilter === cat
+                               ? "bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-600/30"
+                               : "bg-white text-gray-700 border-slate-300 hover:border-slate-400 hover:bg-slate-50"
+                           }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* ── Grid — 4 columns ── */}
+        {/* ── Projects Grid ── */}
         <div
           key={animKey}
-          className="gallery-items grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {filtered.map((item, idx) => (
-            <GalleryCard
-              key={item.id}
-              item={item}
-              index={idx}
-              onOpen={openModal}
-            />
-          ))}
-
-          {filtered.length === 0 && (
-            <div className="col-span-4 py-20 text-center text-gray-400 text-xs tracking-[0.2em] uppercase animate-pulse">
-              No projects found
+          {filtered.length > 0 ? (
+            filtered.map((item, idx) => (
+              <GalleryCard
+                key={item.id}
+                item={item}
+                index={idx}
+                onOpen={openModal}
+              />
+            ))
+          ) : (
+            <div className="col-span-full py-20 text-center">
+              <p className="text-gray-400 text-sm tracking-widest uppercase">
+                No projects found for this category
+              </p>
             </div>
           )}
         </div>
