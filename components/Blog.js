@@ -13,7 +13,9 @@ const ACTIVITIES = [
       "gallery": [
         "img/blog-img/ahsanmonjil/img (12).jpeg",
         "img/blog-img/ahsanmonjil/img (2).jpeg",
-        "img/blog-img/ahsanmonjil/img (3).jpeg"
+        "img/blog-img/ahsanmonjil/img (3).jpeg",
+        "img/blog-img/ahsanmonjil/img (9).jpeg",
+        "img/blog-img/ahsanmonjil/img (8).jpeg",
       ],
       "title": "Community Service Project: Cleanliness Campaign at Ahsan Manzil",
       "location": "Dhaka, Bangladesh",

@@ -6,7 +6,6 @@ import Project from "@/components/Project";
 import Blog from "@/components/Blog";
 import Counter from "@/components/Counter";
 import Contact from "@/components/Contact";
-import LocationMap from "@/components/LocationMap";
 import Slider from "@/components/Slider";
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
         <Blog/>
         <Counter/>
         <Contact/>
-        <LocationMap/>
     </main>
   );
 }

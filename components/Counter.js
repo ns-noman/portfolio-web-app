@@ -1,6 +1,12 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import {
+  FaGithub,
+  FaCode,
+  FaCoffee,
+  FaGlobe,
+} from "react-icons/fa";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -9,38 +15,29 @@ const BG_IMAGE = "img/counter-img/bg.jpg";
 const COUNTER_ITEMS = [
   {
     id:     1,
-    icon:   "fa fa-flag",
-    value:  2500,
+    icon:   <FaGlobe />,
+    value:  100,
     suffix: "",
     boldText: "PROJECT",
     restText: " COMPLETED",
   },
   {
     id:     2,
-    icon:   "fa fa-smile-o",
-    value:  400,
+    icon:   <FaGithub />,
+    value:  66,
     suffix: "",
-    boldText: "HAPPY",
-    restText: " CLIENTS",
+    boldText: "GITHUB",
+    restText: " REPOSITORIES",
   },
   {
     id:     3,
-    icon:   "fa fa-code",
+    icon:   <FaCode />,
     value:  98,
     suffix: "K",
     boldText: "LINE",
     restText: " OF ",
     boldText2: "CODE",
-  },
-  {
-    id:     4,
-    icon:   "fa fa-coffee",
-    value:  78,
-    suffix: "K",
-    boldText: "CUP",
-    restText: " OF ",
-    boldText2: "COFFEE",
-  },
+  }
 ];
 
 // ─── HOOK: count-up on scroll into view ──────────────────────────────────────
@@ -94,14 +91,9 @@ function CounterItem({ item, index }) {
     >
       {/* Number + icon */}
       <div className="counter--num flex items-center justify-center gap-3 mb-3">
-        <i
-          className={`${item.icon} text-white/70 text-3xl transition-transform duration-700 ${
-            started ? "scale-100" : "scale-75"
-          }`}
-          style={{ transitionDelay: `${index * 150 + 200}ms` }}
-        />
+        {item.icon}
         <span className="CounterUp text-4xl md:text-5xl font-black text-white tracking-tight tabular-nums">
-          {count.toLocaleString()}
+          {count.toLocaleString()} +
         </span>
         {item.suffix && (
           <span className="text-3xl md:text-4xl font-black text-white/80">{item.suffix}</span>
@@ -151,7 +143,7 @@ export default function Counter() {
       <div className="absolute inset-x-0 bottom-0 h-px bg-white/10" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-3">
           {COUNTER_ITEMS.map((item, index) => (
             <CounterItem key={item.id} item={item} index={index} />
           ))}
