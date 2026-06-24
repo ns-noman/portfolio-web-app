@@ -8,33 +8,34 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-const slides = [
-  {
-    title: "Cyber Security Mindset",
-    desc: "Protecting systems, data, and digital infrastructure with modern security practices.",
-    img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
-  },
-  {
-    title: "Hacker Workflow",
-    desc: "Thinking like a developer and attacker to build secure applications.",
-    img: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
-  },
-  {
-    title: "Code. Break. Improve.",
-    desc: "Writing clean code while understanding vulnerabilities and system weaknesses.",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-  },
-  {
-    title: "Dark Terminal Environment",
-    desc: "Working inside Linux, terminals, APIs, and backend systems.",
-    img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-  },
-  {
-    title: "Future Software Engineer",
-    desc: "Building scalable, secure, and intelligent software systems.",
-    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
-  },
-];
+  const slides = [
+    {
+      title: "Technology & Open Source Enthusiast",
+      desc: "Passionate about exploring emerging technologies, contributing to open-source communities, and building impactful software solutions.",
+      img: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    },
+    {
+      title: "Research & Innovation",
+      desc: "Interested in exploring advanced computing technologies, software architecture, and data-driven systems through research.",
+      img: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
+    },
+    {
+      title: "Secure & Scalable Systems",
+      desc: "Focused on building reliable, secure, and scalable applications that support modern businesses and digital transformation.",
+      img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
+    },
+    {
+      title: "Future Tech Entrepreneur",
+      desc: "Aspiring to build innovative technology ventures that create meaningful impact, drive digital transformation, and contribute to the growth of the global tech industry.",
+      img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
+    },
+    {
+      title: "Global Impact Through Technology",
+      desc: "Committed to leveraging technology, innovation, and continuous learning to create solutions that benefit people and organizations worldwide.",
+      img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
+    },
+  ];
+
 
 export default function HackerSlider() {
   return (

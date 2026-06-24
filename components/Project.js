@@ -8,148 +8,245 @@ import Image from "next/image";
 const projects = [
   {
     id: 1,
-    title: "Multi Tenant Bike Dealership ERP with E-commerce",
-    subtitle: "Sales, Service, Inventory & Loan Management",
+    title: "Multi-Tenant Bike Dealership ERP & E-Commerce Platform",
+    subtitle: "Sales, Service, Inventory, Accounting & Loan Management",
     image: "/img/projects-img/bike-dealership-erp/img.png",
-    desc: "A comprehensive Enterprise Resource Planning (ERP) solution for motorbike dealerships integrating sales, purchases, inventory management, customer accounting, service management, loan tracking, and investor profit-sharing into a centralized platform.",
-    fullDesc: `
-      <h3 style="margin-bottom:15px;color:#222;font-size:18px;font-weight:600;">
-        Bike Dealership ERP – Sales, Service, Inventory & Loan Management System
-      </h3>
 
-      <p style="margin-bottom:15px;color:#555;line-height:1.8;">
-        A comprehensive Enterprise Resource Planning (ERP) solution developed for motorbike dealerships and service centers to streamline daily business operations. The system integrates sales, purchases, inventory management, customer and supplier accounting, service management, loan tracking, and investor profit-sharing into a centralized platform.
-      </p>
+    desc: "A comprehensive multi-tenant ERP and e-commerce solution for motorcycle dealerships, integrating sales, purchases, inventory, servicing, accounting, loan processing, investment management, and online bike sales into a centralized business platform.",
 
-      <p style="margin-bottom:15px;color:#555;line-height:1.8;">
-        The application automates bike sales and purchase workflows with real-time inventory updates, profit calculations, and financial tracking. It includes a dedicated service management module for handling repairs, maintenance records, service categories, and service profitability analysis.
-      </p>
+    fullDesc: ` <h3 style="margin-bottom:15px;color:#222;font-size:18px;font-weight:600;">
+    Multi-Tenant Bike Dealership ERP & E-Commerce Platform </h3>
 
-      <p style="margin-bottom:15px;color:#555;line-height:1.8;">
-        Advanced inventory controls provide complete visibility of motorcycles, spare parts, and accessories, while integrated customer, supplier, and party ledgers help manage payments, dues, and account balances. The system also features loan management with repayment tracking and investor management with profit-sharing calculations.
-      </p>
-    `,
     
-    tech: ["Laravel", "Next.js", "MySQL", "Tailwind", "REST API"],
+    <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+      A comprehensive multi-tenant business management platform developed for motorcycle dealerships, service centers, and retail operations. The system centralizes bike sales, purchases, inventory control, servicing, accounting, financing, investments, and customer management into a single ERP solution.
+    </p>
+
+    <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+      The ERP includes advanced modules for bike management, spare parts inventory, service operations, customer and supplier accounting, expense tracking, loan processing, and investor profit-sharing. Real-time inventory updates, financial reporting, and role-based access control help streamline daily operations and improve business efficiency.
+    </p>
+
+    <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+      The platform also includes a customer-facing e-commerce storefront built with Next.js, allowing users to browse new and used motorcycles, spare parts, and accessories, submit purchase requests, and place online orders. The storefront seamlessly integrates with the ERP through REST APIs to provide real-time inventory visibility and order management.
+    </p>
+
+    <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+      Designed with scalability in mind, the system supports multiple dealerships, branches, and tenants while providing comprehensive business analytics, operational reporting, and centralized management capabilities.
+    </p>
+
+    `,
+
+    tech: [
+      "Laravel",
+      "Next.js",
+      "PHP",
+      "MySQL",
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "REST API",
+      "Bootstrap",
+      "JavaScript",
+      "Ajax",
+    ],
 
     highlights: [
-      "Multi-tenant architecture with role-based access",
-      "Real-time inventory & sales management",
-      "Automated profit calculations",
-      "Service center operations tracking",
-      "Customer & supplier ledger management",
-      "Interactive Ajax-based UI"
+      "Multi-tenant SaaS architecture",
+      "Bike sales, purchase & inventory management",
+      "Service center & job card management",
+      "Spare parts & accessories inventory tracking",
+      "Loan processing & installment management",
+      "Investment & profit-sharing management",
+      "Accounting, ledger & expense tracking",
+      "Role-based access control (RBAC)",
+      "Real-time inventory synchronization",
+      "Customer-facing e-commerce storefront",
+      "REST API integration between ERP & storefront",
+      "Multi-branch business support",
     ],
-      cats: ["erp", "web-app", "enterprise"],
-      liveFrontend: "https://bikelya.com/",
-      liveBackend: "https://demo.bikelya.com/",
-      githubFrontend: "https://github.com/ns-noman/multi-tenant-bike-dealership-erp.git",
-      githubBackend: "https://github.com/ns-noman/bike-dealership-ecommerce.git",
-      caseStudy: null,
+
+    cats: ["erp", "saas", "ecommerce", "enterprise"],
+
+    liveFrontend: "https://bikelya.com/",
+    liveBackend: "https://demo.bikelya.com/",
+
+    githubBackend:
+      "https://github.com/ns-noman/multi-tenant-bike-dealership-erp",
+    githubFrontend:
+      "https://github.com/ns-noman/multi-tenant-bike-dealership-storefront",
+
+    caseStudy: null,
   },
 
   {
     id: 2,
-    title: "Enterprise Logistics ERP System",
-    subtitle: "Multi-Branch & Air Freight Management",
+    title: "Hub-Based Logistics ERP System",
+    subtitle: "Multi-Branch Logistics, Freight & Accounting Platform",
     image: "/img/projects-img/logistics-ms/img.png",
-    desc: "Comprehensive logistics management system with multi-branch coordination, air freight tracking, shipment management, and financial reporting.",
+    desc: "Enterprise-grade logistics ERP system designed for hub-and-spoke operations, enabling parcel management, multi-branch transfers, shipment tracking, air freight operations, accounting, CRM, and inventory control.",
+
     fullDesc: `
-      <h3 style="margin-bottom:15px;color:#222;font-size:18px;font-weight:600;">
-        Enterprise Logistics ERP – Multi-Branch & Air Freight Management
-      </h3>
+    <h3 style="margin-bottom:15px;color:#222;font-size:18px;font-weight:600;">
+      Hub-Based Multi-Branch Logistics ERP System
+    </h3>
 
-      <p style="margin-bottom:15px;color:#555;line-height:1.8;">
-        Advanced logistics platform designed for multi-branch operations with specialized air freight management capabilities. Handles complex shipment workflows, real-time tracking, and integrated financial reporting across multiple locations.
-      </p>
-    `,
+    <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+      A comprehensive enterprise logistics management platform built to streamline parcel handling, branch operations, shipment processing, freight forwarding, accounting, and inventory management. The system follows a hub-and-spoke logistics model where parcels collected from multiple branches are transferred to a central hub for verification, sorting, shipment preparation, and final dispatch.
+    </p>
 
-    tech: ["Laravel", "Next.js", "MySQL", "Tailwind", "REST API"],
+    <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+      Developed using Laravel, Next.js, MySQL, and REST APIs, the platform provides centralized operational control, real-time shipment tracking, branch-level financial management, air freight handling, customer relationship management, and detailed reporting capabilities.
+    </p>
 
-    highlights: [
-      "Multi-branch fleet management",
-      "Air freight & cargo tracking",
-      "Real-time shipment status updates",
-      "Advanced routing optimization",
-      "Integration with shipping providers"
+    <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+      The ERP includes dedicated modules for parcel booking, shipment management, branch transfers, airline and freight operations, accounting, inventory control, CRM, investor management, and role-based access control, making it suitable for logistics companies operating across multiple locations.
+    </p>
+  `,
+
+    tech: [
+      "Laravel",
+      "Next.js",
+      "MySQL",
+      "Tailwind CSS",
+      "REST API",
+      "Laravel Sanctum",
     ],
 
-    cats: ["erp", "logistics", "enterprise"],
-      liveFrontend: "https://airship.com.bd/",
-      liveBackend: "https://airshipdemo.bikelya.com/",
-      githubFrontend: "https://github.com/ns-noman/airship.com.bd.git",
-      githubBackend: "https://github.com/ns-noman/airship.com.bd.git",
-      caseStudy: "",
+    highlights: [
+      "Hub-and-spoke logistics workflow",
+      "Multi-branch parcel collection & transfer",
+      "Real-time parcel & shipment tracking",
+      "Air freight & airline management",
+      "Branch financial & ledger management",
+      "Double-entry accounting system",
+      "Inventory & stock management",
+      "Customer, supplier & investor CRM",
+      "Role-based access control (RBAC)",
+      "Comprehensive reporting dashboard",
+    ],
+
+    cats: ["erp", "logistics", "freight", "enterprise"],
+
+    liveFrontend: "https://airship.com.bd/",
+    liveBackend: "https://airshipdemo.bikelya.com/",
+    githubFrontend: "https://github.com/ns-noman/airship.com.bd.git",
+    githubBackend: "https://github.com/ns-noman/airship.com.bd.git",
+    caseStudy: "",
   },
 
   {
     id: 3,
     title: "Restaurant Management ERP System",
-    subtitle: "POS, Kitchen Management & Delivery Integration",
+    subtitle: "Production, Inventory, HR & Payroll Management",
     image: "/img/projects-img/rms/img.png",
-    desc: "Complete restaurant operations platform integrating POS, kitchen management, inventory control, HRM, payroll, procurement, delivery management, and financial reporting.",
+    desc: "Enterprise Resource Planning (ERP) system for production-driven businesses, integrating production planning, inventory management, procurement, sales, HR, payroll, and accounting operations into a unified platform.",
+
     fullDesc: `
-      <h3 style="margin-bottom:15px;color:#222;font-size:18px;font-weight:600;">
-        Restaurant Management ERP – Integrated Operations
-      </h3>
-      <p style="margin-bottom:15px;color:#555;line-height:1.8;">
-        Unified restaurant management system combining point-of-sale, kitchen operations, inventory management, human resources, payroll processing, supplier management, and delivery coordination. Streamlines daily operations while providing real-time insights into sales and costs.
-      </p>
-    `,
+  <h3 style="margin-bottom:15px;color:#222;font-size:18px;font-weight:600;">
+    Restaurant Management ERP System
+  </h3>
 
-    tech: ["Laravel", "JavaScript","jQuery","Bootstrap", "MySQL"],
+  <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+    A comprehensive ERP solution developed for production-focused businesses such as food manufacturing, central kitchens, FMCG operations, and inventory-intensive enterprises. The platform centralizes production, inventory, procurement, sales, human resources, payroll, and administrative workflows into a single integrated system.
+  </p>
 
-    highlights: [
-      "Integrated POS system with multiple terminals",
-      "Kitchen display system (KDS)",
-      "Real-time inventory tracking",
-      "Staff management & payroll",
-      "Delivery fleet management",
-      "Financial reporting & analytics"
+  <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+    The system includes production planning and recipe management modules that enable organizations to control raw material consumption, track production activities, and monitor finished goods. Integrated inventory management provides real-time stock visibility, stock movement history, supplier tracking, and procurement control.
+  </p>
+
+  <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+    Additional modules cover employee management, attendance processing, leave administration, payroll automation, loan management, purchasing, sales order processing, expense tracking, and role-based access control, creating a complete operational ecosystem for growing enterprises.
+  </p>
+`,
+
+    tech: [
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "jQuery",
+      "Bootstrap",
+      "Laravel Sanctum",
     ],
 
-    cats: ["erp", "pos", "enterprise"],
+    highlights: [
+      "Recipe & production planning management",
+      "Raw material issuance & production tracking",
+      "Real-time inventory & stock monitoring",
+      "Purchase requisition & procurement workflow",
+      "Supplier & ledger management",
+      "Sales order & payment processing",
+      "HR, attendance & leave management",
+      "Payroll, loans & installment processing",
+      "Expense tracking & reporting",
+      "Role-based access control (RBAC)",
+    ],
+
+    cats: ["erp", "production", "manufacturing", "enterprise"],
 
     liveFrontend: "",
     liveBackend: "https://rmsdemo.bikelya.com/",
     githubFrontend: "",
-    githubBackend: "https://github.com/ns-noman/airship.com.bd.git",
+    githubBackend: "https://github.com/ns-noman/rms-production-erp.git",
     caseStudy: "",
   },
   {
     id: 4,
     title: "Digital Newspaper Management System",
-    subtitle: "Content Management & Distribution Platform",
+    subtitle: "Media Publishing, Editorial Workflow & Advertisement Platform",
     image: "/img/projects-img/news/img.png",
-    desc: "Comprehensive digital newspaper platform with content management, subscription handling, ad management, and multi-channel distribution.",
+    desc: "Enterprise-grade digital publishing platform for news organizations, featuring editorial workflow management, content publishing, advertisement operations, audience engagement, and real-time news delivery.",
+
     fullDesc: `
-      <h3 style="margin-bottom:15px;color:#222;font-size:18px;font-weight:600;">
-        Digital Newspaper Management – Content & Distribution
-      </h3>
+  <h3 style="margin-bottom:15px;color:#222;font-size:18px;font-weight:600;">
+    Digital Newspaper & Media Publishing Platform
+  </h3>
 
-      <p style="margin-bottom:15px;color:#555;line-height:1.8;">
-        Modern newspaper management system providing content management, subscription processing, advertisement management, and multi-channel distribution. Supports web, mobile, and print workflows with comprehensive analytics.
-      </p>
-    `,
+  <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+    A comprehensive content management and publishing platform developed for modern news organizations and online media portals. The system streamlines editorial operations, news publishing workflows, advertisement management, audience engagement, and real-time content distribution through a centralized administration panel.
+  </p>
 
-    tech: ["Laravel", "bootstrap", "MySQL"],
+  <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+    The platform enables editors and journalists to create, review, approve, schedule, and publish articles while maintaining structured editorial workflows. It supports multi-author collaboration, category and topic management, media attachments, breaking news coverage, trending content monitoring, and archive management.
+  </p>
 
-    highlights: [
-      "Content management & editorial workflow",
-      "Subscription & payment processing",
-      "Advertisement management system",
-      "Multi-channel publishing (web, mobile, print)",
-      "Real-time analytics & reporting",
-      "User role & permission management"
+  <p style="margin-bottom:15px;color:#555;line-height:1.8;">
+    Additional modules include advertisement order processing, ad placement management, customer subscriptions, polls and voting, election result reporting, event coverage, SEO configuration, social media integration, analytics tracking, and location-based content organization, providing a complete ecosystem for digital media operations.
+  </p>
+`,
+
+    tech: [
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "jQuery",
+      "Bootstrap",
+      "CSS",
     ],
 
-    cats: ["cms", "web-app", "publishing"],
+    highlights: [
+      "Editorial workflow & content moderation",
+      "Multi-author article publishing system",
+      "Breaking news & live update management",
+      "Advertisement order & placement control",
+      "Customer subscriptions & news feeds",
+      "Polls, voting & audience engagement",
+      "Election results & statistical reporting",
+      "SEO & metadata management",
+      "Social media integration",
+      "Content analytics & article tracking",
+    ],
+
+    cats: ["cms", "media", "publishing", "enterprise"],
 
     liveFrontend: "https://bangladesherkhabor.net/",
-    liveBackend: "https://bangladesherkhabor-demo.bikelya.com/",
-    githubFrontend: "https://github.com/ns-noman/digital-newspaper-management-system.git",
-    githubBackend: "https://github.com/ns-noman/digital-newspaper-management-system.git",
-    caseStudy: null,
+    liveBackend: "demobkhabor.bikelya.com",
+    githubFrontend:
+      "https://github.com/ns-noman/digital-newspaper-management-system.git",
+    githubBackend:
+      "https://github.com/ns-noman/digital-newspaper-management-system.git",
+    caseStudy: "",
   },
 ];
 
@@ -171,7 +268,7 @@ function useInView(threshold = 0.1) {
           obs.disconnect();
         }
       },
-      { threshold }
+      { threshold },
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -213,13 +310,23 @@ function GalleryCard({ item, index, onOpen }) {
           {/* ── Case Study Badge ── */}
           {item.caseStudy && (
             <div className="absolute top-3 right-3 z-10">
-              <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-blue-600 to-blue-700 
+              <span
+                className="inline-flex items-center gap-1.5 bg-gradient-to-r from-blue-600 to-blue-700 
                              text-white text-[11px] font-semibold tracking-wide px-2.5 py-1.5 rounded-full
-                             shadow-md">
-                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                             shadow-md"
+              >
+                <svg
+                  className="w-3.5 h-3.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
                   <path d="M4 5a2 2 0 012-2 1 1 0 000 2H6a1 1 0 000-2H5a1 1 0 000 2H4z" />
-                  <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 000 2h16a1 1 0 000-2H3z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 000 2h16a1 1 0 000-2H3z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 Case Study
               </span>
@@ -227,12 +334,16 @@ function GalleryCard({ item, index, onOpen }) {
           )}
 
           {/* ── Overlay ── */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent 
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent 
                           opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                          flex items-end justify-center pb-4">
-            <button className="px-4 py-2 bg-white text-gray-900 text-sm font-semibold 
+                          flex items-end justify-center pb-4"
+          >
+            <button
+              className="px-4 py-2 bg-white text-gray-900 text-sm font-semibold 
                              rounded-lg hover:bg-gray-100 transition-all transform scale-95 
-                             group-hover:scale-100">
+                             group-hover:scale-100"
+            >
               View Details
             </button>
           </div>
@@ -240,11 +351,12 @@ function GalleryCard({ item, index, onOpen }) {
 
         {/* ── Content ── */}
         <div className="flex-1 p-4 flex flex-col">
-          
           {/* ── Category Badge ── */}
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-[10px] font-bold tracking-wider uppercase text-blue-600 
-                           bg-blue-50 px-2 py-0.5 rounded">
+            <span
+              className="text-[10px] font-bold tracking-wider uppercase text-blue-600 
+                           bg-blue-50 px-2 py-0.5 rounded"
+            >
               {item.cats[0] || "Project"}
             </span>
           </div>
@@ -367,9 +479,7 @@ function Modal({ isOpen, onClose, item }) {
                 <h2 className="text-xl font-bold text-gray-900 mb-1">
                   {item.title}
                 </h2>
-                <p className="text-sm text-gray-600">
-                  {item.subtitle}
-                </p>
+                <p className="text-sm text-gray-600">{item.subtitle}</p>
               </div>
 
               {/* ── Close Button ── */}
@@ -380,15 +490,24 @@ function Modal({ isOpen, onClose, item }) {
                          hover:border-slate-400 transition-all duration-200 active:scale-95"
                 aria-label="Close"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>
 
             {/* ── Second Row: Tech Stack & Action Buttons ── */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              
               {/* ── Tech Stack Pills ── */}
               <div className="flex flex-wrap gap-2">
                 {(item.tech || []).map((t, i) => (
@@ -404,19 +523,39 @@ function Modal({ isOpen, onClose, item }) {
 
               {/* ── Action Buttons ── */}
               <div className="flex flex-wrap gap-2 sm:gap-2.5">
-
                 {/* ── Live Frontend ── */}
                 {item.liveFrontend && (
                   <a
                     href={item.liveFrontend}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-600 text-white 
-                            text-xs sm:text-sm font-semibold rounded-lg hover:bg-green-700 transition-all
-                            duration-200 active:scale-95 shadow-sm hover:shadow-md whitespace-nowrap"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-600 text-white
+text-xs sm:text-sm font-semibold rounded-lg hover:bg-green-700 transition-all
+duration-200 active:scale-95 shadow-sm hover:shadow-md whitespace-nowrap"
                     title="Open Live Frontend"
                   >
-                    <span className="hidden sm:inline">Live Frontend</span>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5
+     c4.477 0 8.268 2.943 9.542 7
+     -1.274 4.057-5.065 7-9.542 7
+     -4.477 0-8.268-2.943-9.542-7z"
+                      />
+                    </svg>
+                    <span className="hidden sm:inline">FE</span>{" "}
                   </a>
                 )}
 
@@ -426,12 +565,33 @@ function Modal({ isOpen, onClose, item }) {
                     href={item.liveBackend}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-500 text-white 
-                            text-xs sm:text-sm font-semibold rounded-lg hover:bg-green-600 transition-all
-                            duration-200 active:scale-95 shadow-sm hover:shadow-md whitespace-nowrap"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-500 text-white
+text-xs sm:text-sm font-semibold rounded-lg hover:bg-green-600 transition-all
+duration-200 active:scale-95 shadow-sm hover:shadow-md whitespace-nowrap"
                     title="Open Live Backend"
                   >
-                    <span className="hidden sm:inline">Live Backend</span>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5
+     c4.477 0 8.268 2.943 9.542 7
+     -1.274 4.057-5.065 7-9.542 7
+     -4.477 0-8.268-2.943-9.542-7z"
+                      />
+                    </svg>
+                    <span className="hidden sm:inline">BE</span>{" "}
                   </a>
                 )}
 
@@ -523,14 +683,12 @@ function Modal({ isOpen, onClose, item }) {
                     <span className="hidden sm:inline">Study</span>
                   </a>
                 )}
-
               </div>
             </div>
           </div>
 
           {/* ── SCROLLABLE CONTENT ── */}
           <div className="modal-content overflow-y-auto flex-1">
-            
             {/* ── Image ── */}
             <div className="w-full">
               <Image
@@ -544,12 +702,13 @@ function Modal({ isOpen, onClose, item }) {
 
             {/* ── Main Content ── */}
             <div className="px-6 py-8 space-y-8">
-              
               {/* ── Description ── */}
               <div className="prose prose-sm max-w-none">
                 <div
                   className="text-gray-700 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: item.fullDesc || item.desc }}
+                  dangerouslySetInnerHTML={{
+                    __html: item.fullDesc || item.desc,
+                  }}
                 />
               </div>
 
@@ -594,7 +753,6 @@ function Modal({ isOpen, onClose, item }) {
   );
 }
 
-
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
 
 export default function ProjectGallery() {
@@ -625,14 +783,18 @@ export default function ProjectGallery() {
   const closeModal = () => setModalOpen(false);
 
   return (
-    <section id="projects" className="py-16 bg-gradient-to-b from-white to-slate-50">
+    <section
+      id="projects"
+      className="py-16 bg-gradient-to-b from-white to-slate-50"
+    >
       <div className="container mx-auto px-4 max-w-7xl">
-
         {/* ── Section Title ── */}
         <div
           ref={titleRef}
           className={`mb-12 transition-all duration-700 ${
-            titleInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            titleInView
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-6"
           }`}
         >
           <div className="space-y-3">
@@ -640,14 +802,15 @@ export default function ProjectGallery() {
               Featured Projects
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl">
-              A selection of enterprise solutions and digital platforms I've built to streamline business operations
+              A selection of enterprise solutions and digital platforms I've
+              built to streamline business operations
             </p>
           </div>
           <div
             className={`mt-4 h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full transition-all 
                        duration-700 delay-300 ${
-              titleInView ? "w-20 opacity-100" : "w-0 opacity-0"
-            }`}
+                         titleInView ? "w-20 opacity-100" : "w-0 opacity-0"
+                       }`}
           />
         </div>
 
@@ -655,7 +818,9 @@ export default function ProjectGallery() {
         <div
           ref={filterRef}
           className={`mb-10 transition-all duration-700 delay-100 ${
-            filterInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            filterInView
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4"
           }`}
         >
           <div className="flex flex-wrap gap-2.5">
@@ -699,7 +864,6 @@ export default function ProjectGallery() {
             </div>
           )}
         </div>
-
       </div>
 
       {/* ── Modal ── */}
