@@ -7,7 +7,7 @@ import {
   FaGithub,
   FaLinkedin,
   FaYoutube,
-  FaGlobe,
+  FaEnvelope,
   FaChevronDown,
 } from "react-icons/fa";
 
@@ -15,7 +15,7 @@ const socialIcons = {
   github: FaGithub,
   linkedin: FaLinkedin,
   youtube: FaYoutube,
-  website: FaGlobe,
+  email: FaEnvelope,
 };
 
 export default function Header({siteInfo}) {
@@ -46,9 +46,9 @@ export default function Header({siteInfo}) {
     {
       label: "CAREER",
       submenu: [
-        { label: "Professional Experience", href: "/experience" },
+        { label: "Education & Experience", href: "/education-and-experience" },
         { label: "Education", href: "/education" },
-        { label: "Skills", href: "/skills" },
+        { label: "Skills & Expertise", href: "/skills" },
       ],
     },
     {

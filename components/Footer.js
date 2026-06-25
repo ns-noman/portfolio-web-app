@@ -3,15 +3,14 @@ import {
   FaGithub,
   FaLinkedin,
   FaYoutube,
-  FaGlobe,
-  FaChevronDown,
+  FaEnvelope,
 } from "react-icons/fa";
 
 const socialIcons = {
   github: FaGithub,
   linkedin: FaLinkedin,
   youtube: FaYoutube,
-  website: FaGlobe,
+  email: FaEnvelope,
 };
 
 export default function Footer({ siteInfo }) {

@@ -3,36 +3,27 @@
 import { useState, useRef, useEffect } from "react";
 import {
   FaHome,
+  FaGithub,
+  FaLinkedin,
+  FaYoutube,
   FaEnvelope,
   FaPhone,
-  FaFax,
-  FaFacebook,
-  FaTwitter,
-  FaLinkedin,
-  FaBehance,
-  FaGooglePlus,
-  FaRss,
   FaPaperPlane,
-  FaCheckCircle,
-  FaExclamationCircle,
 } from "react-icons/fa";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 const CONTACT_ADDRESS = [
-  { id: 1, Icon: FaHome,     text: "House #14, Road #09, Sector #12, Dhaka-1203, Bangladesh.", href: null },
-  { id: 2, Icon: FaEnvelope, text: "support@example.com",  href: "mailto:support@example.com" },
-  { id: 3, Icon: FaPhone,    text: "+000 000 000 000",      href: "tel:+000000000000"          },
-  { id: 4, Icon: FaFax,      text: "+1-212-9876543",        href: null                         },
+  { id: 1, Icon: FaHome,     text: "Plot No.-314/A, Road-18, Block-E, Bashundhara Residential Area, Dhaka 1229, Bangladesh.", href: null },
+  { id: 2, Icon: FaEnvelope, text: "nowab.shorif.cse@gmail.com",  href: "mailto:nowab.shorif.cse@gmail.com" },
+  { id: 3, Icon: FaPhone,    text: "+880 1839317038",      href: "tel:+880 1839317038"          },
 ];
 
 const SOCIAL_LINKS = [
-  { id: 1, Icon: FaFacebook,   href: "#", label: "Facebook"  },
-  { id: 2, Icon: FaTwitter,    href: "#", label: "Twitter"   },
-  { id: 3, Icon: FaLinkedin,   href: "#", label: "LinkedIn"  },
-  { id: 4, Icon: FaBehance,    href: "#", label: "Behance"   },
-  { id: 5, Icon: FaGooglePlus, href: "#", label: "Google+"   },
-  { id: 6, Icon: FaRss,        href: "#", label: "RSS"       },
+  { id: 1, Icon: FaGithub,   href: "https://github.com/ns-noman", label: "GitHub"  },
+  { id: 3, Icon: FaLinkedin,   href: "https://www.linkedin.com/in/nowab-shorif", label: "LinkedIn"  },
+  { id: 2, Icon: FaYoutube,    href: "https://www.youtube.com/@nsanoman", label: "YouTube"   },
+  { id: 4, Icon: FaEnvelope,    href: "mailto:nowab.shorif.cse@gmail.com", label: "Email"   },
 ];
 
 const FORM_FIELDS = [
@@ -69,26 +60,85 @@ function useInView(threshold = 0.1) {
 // ─── MAIN ────────────────────────────────────────────────────────────────────
 
 export default function Contact() {
-  const [form,       setForm]       = useState(INITIAL_FORM);
-  const [status,     setStatus]     = useState(null);
+  const [form, setForm] = useState(INITIAL_FORM);
+  const [status, setStatus] = useState(null);
   const [submitting, setSubmitting] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const [titleRef, titleInView] = useInView(0.1);
-  const [leftRef,  leftInView]  = useInView(0.1);
+  const [leftRef, leftInView] = useInView(0.1);
   const [rightRef, rightInView] = useInView(0.1);
 
-  const handleChange = (e) =>
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!form.contactName.trim()) {
+      newErrors.contactName = "Name is required";
+    }
+    if (!form.contactEmail.trim()) {
+      newErrors.contactEmail = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.contactEmail)) {
+      newErrors.contactEmail = "Invalid email address";
+    }
+    if (!form.contactSubject.trim()) {
+      newErrors.contactSubject = "Subject is required";
+    }
+    if (!form.contactMessage.trim()) {
+      newErrors.contactMessage = "Message is required";
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
     setSubmitting(true);
     setStatus(null);
-    // swap setTimeout for your real fetch("contact.php", ...) call
-    await new Promise((r) => setTimeout(r, 1400));
-    setStatus("success");
-    setSubmitting(false);
-    setForm(INITIAL_FORM);
+
+    try {
+      // Get CSRF token from meta tag (Laravel default)
+      const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute("content");
+      
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(csrfToken && { "X-CSRF-TOKEN": csrfToken }),
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      setStatus("success");
+      setForm(INITIAL_FORM);
+      setErrors({});
+      
+      // Auto-hide success message after 5 seconds
+      setTimeout(() => setStatus(null), 5000);
+    } catch (error) {
+      console.error("Contact form error:", error);
+      setStatus("error");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -189,13 +239,13 @@ export default function Contact() {
               {/* Status banner */}
               <div className="contact-form-status mb-4">
                 {status === "success" && (
-                  <div className="flex items-center gap-2 text-sm text-green-700 bg-green-50 border border-green-200 px-4 py-3">
+                  <div className="flex items-center gap-2 text-sm text-green-700 bg-green-50 border border-green-200 px-4 py-3 rounded">
                     <FaCheckCircle className="text-green-500 shrink-0" />
                     Your message was sent successfully. I&apos;ll get back to you soon!
                   </div>
                 )}
                 {status === "error" && (
-                  <div className="flex items-center gap-2 text-sm text-red-700 bg-red-50 border border-red-200 px-4 py-3">
+                  <div className="flex items-center gap-2 text-sm text-red-700 bg-red-50 border border-red-200 px-4 py-3 rounded">
                     <FaExclamationCircle className="text-red-500 shrink-0" />
                     Something went wrong. Please try again.
                   </div>
@@ -207,49 +257,74 @@ export default function Contact() {
                 {/* Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {FORM_FIELDS.filter((f) => f.half).map((field) => (
+                    <div key={field.name} className="flex flex-col">
+                      <input
+                        type={field.type}
+                        name={field.name}
+                        value={form[field.name]}
+                        onChange={handleChange}
+                        placeholder={field.placeholder}
+                        required
+                        className={`form-control w-full px-4 py-3 text-sm border rounded transition-all duration-200 placeholder-gray-400 text-gray-800 focus:outline-none ${
+                          errors[field.name]
+                            ? "border-red-500 bg-red-50 focus:border-red-500 focus:bg-white"
+                            : "border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white"
+                        }`}
+                      />
+                      {errors[field.name] && (
+                        <p className="text-xs text-red-600 mt-1">{errors[field.name]}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Subject */}
+                {FORM_FIELDS.filter((f) => !f.half).map((field) => (
+                  <div key={field.name} className="flex flex-col">
                     <input
-                      key={field.name}
                       type={field.type}
                       name={field.name}
                       value={form[field.name]}
                       onChange={handleChange}
                       placeholder={field.placeholder}
                       required
-                      className="form-control w-full px-4 py-3 text-sm border border-gray-200 bg-gray-50 placeholder-gray-400 text-gray-800 focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-200"
+                      className={`form-control w-full px-4 py-3 text-sm border rounded transition-all duration-200 placeholder-gray-400 text-gray-800 focus:outline-none ${
+                        errors[field.name]
+                          ? "border-red-500 bg-red-50 focus:border-red-500 focus:bg-white"
+                          : "border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white"
+                      }`}
                     />
-                  ))}
-                </div>
-
-                {/* Subject */}
-                {FORM_FIELDS.filter((f) => !f.half).map((field) => (
-                  <input
-                    key={field.name}
-                    type={field.type}
-                    name={field.name}
-                    value={form[field.name]}
-                    onChange={handleChange}
-                    placeholder={field.placeholder}
-                    required
-                    className="form-control w-full px-4 py-3 text-sm border border-gray-200 bg-gray-50 placeholder-gray-400 text-gray-800 focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-200"
-                  />
+                    {errors[field.name] && (
+                      <p className="text-xs text-red-600 mt-1">{errors[field.name]}</p>
+                    )}
+                  </div>
                 ))}
 
                 {/* Message */}
-                <textarea
-                  name="contactMessage"
-                  value={form.contactMessage}
-                  onChange={handleChange}
-                  rows={9}
-                  placeholder="Message"
-                  required
-                  className="form-control w-full px-4 py-3 text-sm border border-gray-200 bg-gray-50 placeholder-gray-400 text-gray-800 focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-200 resize-none"
-                />
+                <div className="flex flex-col">
+                  <textarea
+                    name="contactMessage"
+                    value={form.contactMessage}
+                    onChange={handleChange}
+                    rows={9}
+                    placeholder="Message"
+                    required
+                    className={`form-control w-full px-4 py-3 text-sm border rounded transition-all duration-200 placeholder-gray-400 text-gray-800 focus:outline-none resize-none ${
+                      errors.contactMessage
+                        ? "border-red-500 bg-red-50 focus:border-red-500 focus:bg-white"
+                        : "border-gray-200 bg-gray-50 focus:border-blue-500 focus:bg-white"
+                    }`}
+                  />
+                  {errors.contactMessage && (
+                    <p className="text-xs text-red-600 mt-1">{errors.contactMessage}</p>
+                  )}
+                </div>
 
                 {/* Submit */}
                 <button
                   type="submit"
                   disabled={submitting}
-                  className={`submit-btn btn btn-primary inline-flex items-center gap-2 px-10 py-3 text-xs font-extrabold tracking-[0.2em] uppercase text-white bg-blue-600 border border-blue-600 hover:bg-blue-700 hover:border-blue-700 active:scale-[0.98] transition-all duration-200 ${
+                  className={`submit-btn btn btn-primary inline-flex items-center gap-2 px-10 py-3 text-xs font-extrabold tracking-[0.2em] uppercase text-white bg-blue-600 border border-blue-600 hover:bg-blue-700 hover:border-blue-700 active:scale-[0.98] transition-all duration-200 rounded ${
                     submitting ? "opacity-70 cursor-not-allowed" : ""
                   }`}
                 >
@@ -275,6 +350,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -297,6 +373,7 @@ export default function Contact() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2846.920638853999!2d90.432309374029!3d23.81354568635169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c65555555555%3A0x23c2934f4c81fc4!2sMagura%20Group!5e1!3m2!1sen!2sbd!4v1780745295466!5m2!1sen!2sbd"
               className="w-full h-[500px]"
               loading="lazy"
+              title="Dhaka, Bangladesh Location"
             />
           </div>
         </div>
