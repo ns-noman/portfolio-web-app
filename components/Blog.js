@@ -42,7 +42,7 @@ const ACTIVITIES = [
       ],
       "title": "A Cleanliness Movement That Revived Life at Hatirjheel",
       "location": "Dhaka, Bangladesh",
-      "date": "22 May 2026",
+      "date": "16 January 2026",
       "type": "Volunteer Work",
       "description": "<p>With the touch of cleanliness at the heart of Hatirjheel, a renewed sense of life has emerged—where collective efforts have turned into a harmonious voice of an aware city.</p><p>A day-long cleanliness campaign was successfully conducted at the iconic Hatirjheel area of Dhaka, jointly organized by Winter End Summer Runner and RAJUK, with the support of BD Clean. The initiative witnessed enthusiastic participation from citizens of diverse professions, along with dedicated volunteers whose sincere efforts helped restore and enhance the cleanliness and order of this important urban landmark.</p><p>The primary objective of this campaign was to preserve one of the city’s most aesthetic and significant public spaces while strengthening environmental awareness and civic responsibility among city dwellers. Beyond physical cleaning activities, volunteers actively engaged with pedestrians and visitors to highlight the importance of maintaining cleanliness in daily life—encouraging it to become a sustainable habit rather than a one-time effort.</p><p>This initiative once again demonstrated that cleanliness is not merely an activity, but a continuous social movement—where collective participation becomes the driving force of transformation. Preserving the beauty of Hatirjheel ultimately means ensuring a healthier, more livable future for our cities, environment, and next generations.</p><p>BD Clean firmly believes that the practice of cleanliness begins at the individual level and gradually expands into society and the nation. This successful campaign further strengthened that belief.</p><p>Heartfelt gratitude goes to all volunteers, organizers, partner organizations, and conscious citizens who contributed to this initiative. Let us spread this spirit of cleanliness from Hatirjheel to every corner of the country and work together to build a cleaner, greener, and more responsible Bangladesh.</p>",
       "highlights": [
@@ -61,7 +61,7 @@ const ACTIVITIES = [
       ],
       "title": "Final Project Defense Day – A Memorable Journey",
       "location": "Dhaka, Bangladesh",
-      "date": "22 May 2026",
+      "date": "16 October 2025",
       "type": "Academic",
       "description": "<h2>Final Project Defense Day – A Memorable Journey</h2><p>The final project defense day of our BSc in CSE was one of the most memorable milestones of our academic journey. After months of hard work, research, coding, and continuous debugging, we successfully completed our project defense in front of our respected teachers.</p><p>On that day, all of us friends came together with excitement and a bit of nervousness. But as the presentation began, confidence slowly took over. We explained our project, demonstrated its features, and answered the questions from our honorable supervisors. Their feedback and appreciation made all the effort truly meaningful.</p><p>After the defense was successfully completed, we celebrated the moment together. We took pictures as friends, capturing the joy of achievement. We also had the opportunity to take photos with our respected teachers, which made the day even more special and memorable.</p><p>It was not just a formal academic requirement—it was a journey of teamwork, learning, late-night coding sessions, and unforgettable memories. We laughed, we struggled, and finally, we succeeded together.</p><p>This day will always remain a proud chapter in our lives, marking the successful completion of an important phase of our academic journey and the beginning of new dreams ahead.</p>",
       
@@ -77,7 +77,7 @@ const ACTIVITIES = [
       ],
       "title": "E-92 & E-93 Batch Cricket Match – A Day of Energy, Unity, and Sportsmanship",
       "location": "Dhaka, Bangladesh",
-      "date": "22 May 2026",
+      "date": "31 May 2023",
       "type": "Sports",
       "description": "<div class=\"blog-description\"><h2>E-92 & E-93 Batch Cricket Match – A Day of Energy, Unity, and Sportsmanship</h2><p>The cricket match between E-92 and E-93 batches was an exciting and memorable event that brought together students in a spirit of friendship, competition, and teamwork.</p><p>The match was more than just a game—it was a reflection of our active student life and strong bonding between batches. Players from both teams showed great enthusiasm, energy, and sportsmanship from the very beginning.</p><p>On the field, we witnessed intense but friendly competition. Every run, wicket, and boundary created moments of excitement for both players and spectators. Team coordination, quick decisions, and strategic gameplay made the match even more engaging.</p><p>What made the day truly special was the unity off the field. Students from both E-92 and E-93 supported each other, cheered loudly, and enjoyed the game together. It was a perfect example of how sports can build connection and friendship beyond classrooms.</p><p>After the match, we captured group photos and shared memorable moments with friends. These pictures reflect not just a game, but a celebration of student life, teamwork, and togetherness.</p><p>This event highlights our active participation in extracurricular activities, leadership in organizing and playing, and strong interpersonal bonding—qualities that define a complete and engaged student community.</p></div>",
       "highlights": [
@@ -93,7 +93,7 @@ const ACTIVITIES = [
       ],
       "title": "Flood Relief Support – Contribution with Assunna Foundation (2024)",
       "location": "Dhaka, Bangladesh",
-      "date": "22 May 2026",
+      "date": "23 August 2024",
       "type": "Volunteer Work",
       "description": "<div class=\"blog-description\"><h2>Flood Relief Support – Contribution with Assunna Foundation (2024)</h2><p>The year 2024 witnessed severe flooding across multiple regions of Bangladesh, affecting thousands of families and disrupting daily life. During this critical time, I had the opportunity to actively participate in a humanitarian relief program organized by Assunna Foundation.</p><p>I joined the foundation’s relief preparation activities, where we worked together to support flood-affected people. Our responsibilities included organizing essential relief materials such as food packages, clean drinking water, medicines, and other necessary supplies. Being part of this effort gave me a real sense of responsibility and compassion toward people in crisis.</p><p>Working alongside dedicated volunteers, I helped in preparing and managing distribution-ready packages to ensure timely support for affected communities. The experience was both emotional and inspiring, as it showed how collective effort can bring hope to people facing extreme hardship.</p><p>This initiative was not just about distributing aid—it was about standing beside humanity when it needed support the most. It taught me the value of empathy, teamwork, and social responsibility.</p><p>I feel proud to have contributed, even in a small way, to this noble cause with Assunna Foundation. Experiences like this continue to motivate me to stay active in volunteer work and contribute to society whenever possible.</p></div>",
       "highlights": [
@@ -109,7 +109,7 @@ const ACTIVITIES = [
       ],
       "title": "Volunteering for Life-Saving Mission with Quantum Blood Lab",
       "location": "Dhaka, Bangladesh",
-      "date": "22 May 2026",
+      "date": "04 August 2026",
       "type": "Volunteer Work",
       "description": "<div class=\"blog-description\"><h2>Community Awareness & Cleanliness Leadership with BD Clean (Badda 13 Zone)</h2><p>As the Zone Coordinator of BD Clean North Dhaka, Badda 13 Zone, I have been actively involved in promoting cleanliness awareness and environmental responsibility among the local community.</p><p>In this role, I work closely with volunteers and local residents to educate people about the importance of maintaining a clean and healthy environment. Through direct communication, awareness discussions, and public engagement activities, I try to inspire individuals to take responsibility for their surroundings.</p><p>One of the key parts of my responsibility is conducting awareness campaigns where we explain how small daily habits—such as proper waste disposal and avoiding plastic pollution—can significantly improve our environment. I also engage with people in public spaces to spread awareness about cleanliness and encourage behavioral change.</p><p>In addition, I have been involved in organizing and guiding oath-taking sessions, where participants commit themselves to maintaining cleanliness and supporting a cleaner Bangladesh. These activities help strengthen a sense of accountability and collective responsibility among citizens.</p><p>This experience has not only improved my leadership and communication skills but also deepened my understanding of community engagement and social impact. Working as a coordinator has taught me how consistent awareness efforts can gradually bring real change in society.</p><p>I am proud to be part of BD Clean’s mission, contributing to building a cleaner, greener, and more responsible urban community.</p></div>",
       "highlights": [
@@ -127,7 +127,7 @@ const ACTIVITIES = [
       ],
       "title": "Community Awareness & Cleanliness Campaign – BD Clean (Badda 13 Zone)",
       "location": "Dhaka, Bangladesh",
-      "date": "22 May 2026",
+      "date": "15 May 2026",
       "type": "Volunteer Work",
       "description": "<div class=\"blog-description\"><h2>Community Awareness & Cleanliness Leadership with BD Clean (North Dhaka, Badda 13 Zone)</h2><p>BD Clean is a volunteer-based, non-political platform of conscious citizens working to build a clean and hygienic Bangladesh through collective action and awareness. Established in 2016, the organization operates with the vision of transforming Bangladesh into one of the cleanest countries in the world through behavioral change and community participation.</p><p>As the Zone Coordinator of BD Clean North Dhaka, Badda 13 Zone, I actively contribute to this mission by engaging with local communities and promoting cleanliness awareness at the grassroots level. My role involves guiding volunteers, organizing awareness activities, and encouraging citizens to adopt proper waste management practices in their daily lives.</p><p>BD Clean regularly conducts weekly cleanliness drives across different areas of the country, where volunteers physically clean selected locations while also educating local people about responsible waste disposal and environmental responsibility. These activities aim not only to clean spaces but also to change mindsets and habits for long-term impact.</p><p>In my coordination area, I focus on direct communication with people, explaining the importance of cleanliness, civic duty, and sustainable environmental practices. I also encourage participation in oath-taking sessions where volunteers commit themselves to maintaining cleanliness and supporting a greener Bangladesh.</p><p>This experience has strengthened my leadership, communication, and organizational skills while deepening my understanding of community-driven social change. Being part of BD Clean has shown me how consistent awareness and volunteer efforts can create meaningful impact in society.</p><p>I am proud to contribute to BD Clean’s vision of building a cleaner, healthier, and more responsible Bangladesh through collective action and awareness.</p></div>",
       "highlights": [
@@ -141,9 +141,8 @@ const ACTIVITIES = [
       ],
       "title": "20 Years Celebration – Bangladesh Advanced Technology Limited (Magura Group Concern)",
       "location": "Dhaka, Bangladesh",
-      "date": "22 May 2026",
+      "date": "01 December 2026",
       "type": "Community",
-
       "description": "<div class=\"blog-description\"><h2>20 Years Celebration – Bangladesh Advanced Technology Limited (Magura Group Concern)</h2><p>The 20th anniversary celebration of Bangladesh Advanced Technology Limited, a concern of Magura Group, marked an important milestone in the organization’s journey of growth, innovation, and long-term contribution to the technology and business sector of Bangladesh.</p><p>As part of the company team, I had the opportunity to participate in this special occasion along with my colleagues. The event brought together employees from different departments, creating an environment of unity, collaboration, and shared achievement.</p><p>During the celebration, we captured memorable group photos as a team, reflecting our teamwork, professional bonding, and collective involvement in the organization’s success. Being part of such a milestone event allowed me to experience the corporate culture more closely and understand how consistency and teamwork contribute to long-term organizational growth.</p><p>This celebration was more than just an event—it represented two decades of dedication, effort, and progress by the organization. It also inspired us as team members to contribute more actively and responsibly toward future goals.</p><p>Overall, this experience helped strengthen my sense of professionalism, teamwork, and corporate engagement, which are essential for personal and career development.</p></div>",
       "highlights": [
       ]
@@ -233,7 +232,7 @@ function ActivityCard({ activity, index, onOpen }) {
         <h2 className="text-sm font-bold leading-snug mb-2 text-gray-900 uppercase line-clamp-2">
           <button
             onClick={() => onOpen(activity)}
-            className="hover:text-blue-600 transition-colors duration-200 text-left focus:outline-none"
+            className="hover:text-blue-600 transition-colors duration-200 text-left focus:outline-none text-justify"
           >
             {activity.title}
           </button>
@@ -246,7 +245,7 @@ function ActivityCard({ activity, index, onOpen }) {
         </p>
 
         {/* Description */}
-        <p className="activity-description-content text-xs text-gray-600 leading-relaxed line-clamp-3 flex-1 mb-3">
+        <p className="activity-description-content text-xs text-gray-600 leading-relaxed line-clamp-3 flex-1 mb-3 text-justify">
           {activity.description.replace(/<[^>]*>/g, '')}
         </p>
 
@@ -450,7 +449,7 @@ function ActivityModal({ isOpen, onClose, activity }) {
           <div className="px-6 py-8 activity-content space-y-4">
             {/* Render HTML description */}
             <div 
-              className="text-sm text-gray-700 leading-relaxed prose prose-sm max-w-none"
+              className="text-sm text-gray-700 leading-relaxed prose prose-sm max-w-none text-justify"
               dangerouslySetInnerHTML={{ __html: activity.description }}
             />
           </div>

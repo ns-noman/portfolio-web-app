@@ -362,15 +362,15 @@ function GalleryCard({ item, index, onOpen }) {
           </div>
 
           {/* ── Title & Subtitle ── */}
-          <h3 className="text-sm font-bold text-gray-900 mb-1 leading-snug line-clamp-2">
+          <h3 className="text-sm font-bold text-gray-900 mb-1 leading-snug line-clamp-2 text-justify">
             {item.title}
           </h3>
-          <p className="text-xs text-gray-500 mb-3 line-clamp-2">
+          <p className="text-xs text-gray-500 mb-3 line-clamp-2 text-justify">
             {item.subtitle}
           </p>
 
           {/* ── Description ── */}
-          <p className="text-xs text-gray-600 line-clamp-2 flex-1 mb-3">
+          <p className="text-xs text-gray-600 line-clamp-2 flex-1 mb-3 text-justify">
             {item.desc}
           </p>
 
@@ -705,7 +705,7 @@ duration-200 active:scale-95 shadow-sm hover:shadow-md whitespace-nowrap"
               {/* ── Description ── */}
               <div className="prose prose-sm max-w-none">
                 <div
-                  className="text-gray-700 leading-relaxed"
+                  className="text-gray-700 leading-relaxed text-justify"
                   dangerouslySetInnerHTML={{
                     __html: item.fullDesc || item.desc,
                   }}
